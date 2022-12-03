@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 func main() {
 	var number1 int64 = 1000000000000000
@@ -36,4 +39,12 @@ func main() {
 	var char = 'B' // char não existe, ele considera como int
 
 	fmt.Println(char)
+
+	var boolean bool // var init false
+
+	fmt.Println(boolean)
+
+	var typeError error = errors.New("Error internal ")
+
+	fmt.Println(typeError)
 }
