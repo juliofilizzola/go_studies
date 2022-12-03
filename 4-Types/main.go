@@ -28,4 +28,12 @@ func main() {
 
 	fmt.Println(numberFloat1)
 
+	// string
+
+	var str string = "Text"
+	fmt.Println(str)
+
+	var char = 'B' // char não existe, ele considera como int
+
+	fmt.Println(char)
 }
