@@ -14,4 +14,18 @@ func main() {
 	var number3 rune = 12345
 	fmt.Println(number3)
 
+	//uint8 BYTE
+	var number4 byte = 123
+	fmt.Println(number4)
+
+	// float
+
+	var numberFloat float32 = 123.45
+
+	fmt.Println(numberFloat)
+
+	var numberFloat1 float64 = 1230000000000.45
+
+	fmt.Println(numberFloat1)
+
 }
