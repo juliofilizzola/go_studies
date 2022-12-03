@@ -1,3 +1,3 @@
-module 3-Variaveis
+module main
 
 go 1.19
