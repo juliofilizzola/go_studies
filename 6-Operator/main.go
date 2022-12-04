@@ -11,4 +11,7 @@ func main() {
 
 	fmt.Println(soma, sub, div, mult, rest)
 
+	const var1 string = "string"
+	var2 := "string 2"
+	print(var1, var2)
 }
