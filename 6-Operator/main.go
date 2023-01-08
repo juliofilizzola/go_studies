@@ -31,4 +31,6 @@ func main() {
 	fmt.Println(varTrue || varFalse)
 	fmt.Println(!varFalse)
 	fmt.Println(!varTrue)
+
+	fmt.Println("---------------")
 }
