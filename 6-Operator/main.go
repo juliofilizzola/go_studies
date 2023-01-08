@@ -22,4 +22,13 @@ func main() {
 	println(max)
 	println(min)
 	println(igual)
+
+	// OPERADORES LOGICOS
+	fmt.Println("----------")
+	varTrue, varFalse := true, false
+
+	fmt.Println(varTrue && varFalse)
+	fmt.Println(varTrue || varFalse)
+	fmt.Println(!varFalse)
+	fmt.Println(!varTrue)
 }
