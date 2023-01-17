@@ -16,5 +16,18 @@ func main() {
 	fmt.Println(var2, "var 2")
 
 	// Ponteiro é uma referencia de memória!
+	var var3 int
+	var point *int
+	var3 = 100
+	/**
+	point = var3
+	desse jeito o go não deixar atribuir, aqui você terar
+	que add o & antes do valor que será atribuido
+	*/
+	point = &var3
+
+	fmt.Println(var3, "var 3")
+	fmt.Println(point, "point")        // aqui vai imprimir o valor do endereço da memoria
+	fmt.Println(*point, "point value") // com o * você consegue recuperar o valor que está armazenado
 
 }
