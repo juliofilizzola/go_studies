@@ -15,7 +15,7 @@ func main() {
 	fmt.Println(var1, "var 1")
 	fmt.Println(var2, "var 2")
 
-	// Ponteiro é uma referencia de memória!
+	// Ponteiro é uma referência de memória!
 	var var3 int
 	var point *int
 	var3 = 100
@@ -27,7 +27,10 @@ func main() {
 	point = &var3
 
 	fmt.Println(var3, "var 3")
-	fmt.Println(point, "point")        // aqui vai imprimir o valor do endereço da memoria
-	fmt.Println(*point, "point value") // com o * você consegue recuperar o valor que está armazenado
+	fmt.Println(point, "point")        // aqui vai imprimir o valor do endereço da memória
+	fmt.Println(*point, "point value") // com o * consegue recuperar o valor armazenado
+	var3 = 1233
+	fmt.Println(*point, "point value")
+	fmt.Println(var3, "var 3")
 
 }
