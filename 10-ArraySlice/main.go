@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 func main() {
 	fmt.Println("Arrays e Slices")
@@ -16,4 +19,14 @@ func main() {
 
 	array3 := [...]int{1, 2, 3, 4, 5, 6, 7}
 	fmt.Println(array3, "array3")
+
+	slice := []int{11, 22, 33, 44, 55, 66, 77, 88, 99}
+	fmt.Println(slice, "slice")
+
+	fmt.Println(reflect.TypeOf(slice), "type of slice")
+	fmt.Println(reflect.TypeOf(array3), "type of array")
+
+	slice = append(slice, 00)
+
+	fmt.Println(slice, "new slice")
 }
