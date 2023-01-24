@@ -12,4 +12,8 @@ func main() {
 	} else {
 		fmt.Println("menos do que 15")
 	}
+
+	if numberUnk := numberExample; numberUnk > 0 {
+		fmt.Println("é maior do que zero")
+	}
 }
