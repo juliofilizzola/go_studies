@@ -16,4 +16,7 @@ func main() {
 	if numberUnk := numberExample; numberUnk > 0 {
 		fmt.Println("é maior do que zero")
 	}
+	// não tem acesso a variavel criada no if
+	// ela só existe no escopo do if
+
 }
