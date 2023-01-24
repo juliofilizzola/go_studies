@@ -17,4 +17,8 @@ func main() {
 
 	fmt.Println(timeVar)
 
+	for index := 0; index < 100; index++ {
+		fmt.Println("incrementando: ", index)
+		time.Sleep(time.Second)
+	}
 }
