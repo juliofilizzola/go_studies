@@ -19,6 +19,16 @@ func main() {
 
 	for index := 0; index < 100; index++ {
 		fmt.Println("incrementando: ", index)
-		time.Sleep(time.Second)
 	}
+
+	names := [3]string{"João", "Davi", "Lucas"}
+	for index, name := range names {
+		// primeiro paramentro do for "of" é o index
+		fmt.Println(name, index)
+	}
+
+	for _, name := range names {
+		fmt.Println(name)
+	}
+
 }
