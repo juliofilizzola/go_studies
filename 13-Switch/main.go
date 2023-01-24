@@ -19,7 +19,7 @@ func dayWeek(numberDay int) string {
 	case 7:
 		return "Sabádo"
 	default:
-		return "Numero invalido"
+		return "Numero inválido"
 	}
 }
 
@@ -29,4 +29,6 @@ func main() {
 	resolve := dayWeek(2)
 
 	fmt.Println(resolve)
+
+	// caso não tenha o retorno do case, deve se usar o break
 }
