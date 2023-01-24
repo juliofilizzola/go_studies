@@ -1,0 +1,3 @@
+package anonymous
+
+func Anonymous() {}
