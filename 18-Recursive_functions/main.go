@@ -7,5 +7,6 @@ import (
 
 func main() {
 	fmt.Println("18-Recursive_functions")
-	fibonacci.Fibonacci(0)
+	resolve := fibonacci.Fibonacci(uint(15))
+	fmt.Println(resolve)
 }
