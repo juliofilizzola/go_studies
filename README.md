@@ -22,7 +22,7 @@
 - [x] Func Recursive
 - [x] Defer
 - [x] Panic e Recover
-- [ ] Func Closure
+- [x] Func Closure
 - [ ] Func Pontieiro
 - [ ] Func Init
 - [ ] Methods
