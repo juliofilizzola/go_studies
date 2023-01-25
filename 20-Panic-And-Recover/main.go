@@ -18,4 +18,6 @@ func main() {
 	fmt.Println("Panic and Recover")
 
 	fmt.Println(valid(6, 6))
+
+	fmt.Println("Pós funct")
 }
