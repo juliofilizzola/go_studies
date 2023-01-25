@@ -12,5 +12,6 @@ func func2() {
 
 func main() {
 	defer func1()
+	//defe == adiar
 	func2()
 }
