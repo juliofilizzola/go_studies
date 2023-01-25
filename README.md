@@ -21,7 +21,7 @@
 - [x] Func Anonymous
 - [x] Func Recursive
 - [x] Defer
-- [ ] Panic e Recover
+- [x] Panic e Recover
 - [ ] Func Closure
 - [ ] Func Pontieiro
 - [ ] Func Init
