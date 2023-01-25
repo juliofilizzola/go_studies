@@ -2,7 +2,14 @@ package main
 
 import "fmt"
 
+func recoverExample() {
+	if r := recover(); r != nil {
+		fmt.Println("Execução recuperada com sucesso. ")
+	}
+}
+
 func valid(n1, n2 float32) bool {
+	defer recoverExample()
 	media := (n1 + n2) / 2
 
 	if media > 6 {
