@@ -26,7 +26,7 @@
 - [x] Func Pontieiro
 - [x] Func Init
 - [x] Methods
-- [ ] Interface
+- [x] Interface
 - [ ] Interface Generic
 
 
