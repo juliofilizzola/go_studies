@@ -25,7 +25,7 @@
 - [x] Func Closure
 - [x] Func Pontieiro
 - [x] Func Init
-- [ ] Methods
+- [x] Methods
 - [ ] Interface
 - [ ] Interface Generic
 
