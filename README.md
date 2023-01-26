@@ -27,7 +27,7 @@
 - [x] Func Init
 - [x] Methods
 - [x] Interface
-- [ ] Interface Generic
+- [x] Interface Generic
 
 
 Esses são os fundamentos do Go.
