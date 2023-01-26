@@ -24,7 +24,7 @@
 - [x] Panic e Recover
 - [x] Func Closure
 - [x] Func Pontieiro
-- [ ] Func Init
+- [x] Func Init
 - [ ] Methods
 - [ ] Interface
 - [ ] Interface Generic
