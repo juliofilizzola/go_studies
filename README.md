@@ -23,7 +23,7 @@
 - [x] Defer
 - [x] Panic e Recover
 - [x] Func Closure
-- [ ] Func Pontieiro
+- [x] Func Pontieiro
 - [ ] Func Init
 - [ ] Methods
 - [ ] Interface
