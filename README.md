@@ -26,8 +26,8 @@
 - [x] Func Pontieiro
 - [x] Func Init
 - [x] Methods
-- [ ] Interface
-- [ ] Interface Generic
+- [x] Interface
+- [x] Interface Generic
 
 
 Esses são os fundamentos do Go.
