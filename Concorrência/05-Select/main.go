@@ -23,10 +23,12 @@ func main() {
 	}()
 
 	for {
-		messageChannel1 := <-channel1
-		fmt.Println(messageChannel1)
+		select {
+		case messageChannel1 := <-channel1:
+			fmt.Println(messageChannel1)
+		case messageChannel2 := <-channel2:
+			fmt.Println(messageChannel2)
+		}
 
-		messageChannel2 := <-channel2
-		fmt.Println(messageChannel2)
 	}
 }
