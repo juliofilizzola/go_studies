@@ -5,6 +5,11 @@ import (
 	"testing"
 )
 
+type addressTest struct {
+	dataInsert string
+	returnData string
+}
+
 func TestTypeAddress(t *testing.T) {
 	addressStreet := "Avenida Paulista"
 
@@ -14,4 +19,5 @@ func TestTypeAddress(t *testing.T) {
 	if typeResult != typeExpect {
 		t.Error("type recivid error")
 	}
+	t.Log()
 }
