@@ -11,13 +11,20 @@ type addressTest struct {
 }
 
 func TestTypeAddress(t *testing.T) {
-	addressStreet := "Avenida Paulista"
-
-	typeExpect := "Avenida"
-	typeResult := TypeAddress(addressStreet)
-
-	if typeResult != typeExpect {
-		t.Error("type recivid error")
+	addressType := []addressTest{
+		{"Rua ABC", "Rua"},
+		{"Avenida ABC", "Avenida"},
+		{"Rodovia ABC", "Rodovia"},
+		{"Beco ABC", "type invalid"},
 	}
-	t.Log()
+	for _, test := range addressType {
+		typeAddress := TypeAddress(test.dataInsert)
+		if typeAddress != test.returnData {
+			t.Errorf(
+				"type incorrect!  %s is diff from %s",
+				typeAddress,
+				test.returnData,
+			)
+		}
+	}
 }

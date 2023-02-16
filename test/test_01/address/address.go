@@ -3,7 +3,7 @@ package address
 import "strings"
 
 func TypeAddress(address string) string {
-	typeValids := []string{"Rua", "AV", "Avenida", "Alameda"}
+	typeValids := []string{"Rua", "AV", "Avenida", "Alameda", "Rodovia"}
 	fistWork := strings.Split(address, " ")[0]
 
 	addressValids := false
