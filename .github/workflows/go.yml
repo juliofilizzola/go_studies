@@ -25,7 +25,10 @@ jobs:
 #       run: go build -v ./...
 
     - name: Test_1
-      run: go test -v ./test/test_01/
+      run:
+        cd ./test/test_01
+        go test -v ./...
+        cd ~
      
     - name: Test_2
       run: go test -v ./test/Test_02/
