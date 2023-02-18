@@ -31,7 +31,13 @@ jobs:
         cd ~
      
     - name: Test_2
-      run: go test -v ./test/Test_02/
-      
+      run: 
+        cd ./test/Test_02 &&
+        go test -v ./... &&
+        cd ~
+        
     - name: Test_3
-      run: go test -v ./test/Test_03/  
+      run: 
+        cd ./test/Test_03 &&
+        go test -v ./... &&
+        cd ~ 
