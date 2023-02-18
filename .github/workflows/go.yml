@@ -26,8 +26,8 @@ jobs:
 
     - name: Test_1
       run:
-        cd ./test/test_01
-        go test -v ./...
+        cd ./test/test_01 &&
+        go test -v ./... &&
         cd ~
      
     - name: Test_2
