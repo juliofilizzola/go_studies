@@ -20,6 +20,5 @@ func (r Retangulo) Area() float64 {
 }
 
 func (c Ciculo) Area() float64 {
-	//return math.Pi * math.Pow(c.Raio, 2)
 	return math.Pi * math.Pow(c.Raio, 2)
 }

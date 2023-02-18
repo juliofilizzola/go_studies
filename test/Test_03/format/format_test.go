@@ -17,9 +17,9 @@ func TestRetangulo_Area(t *testing.T) {
 	})
 
 	t.Run("Circulo", func(t *testing.T) {
-		circ := Ciculo{123}
-		expect := float64(math.Pi * 10)
-		area := circ.Raio
+		circ := Ciculo{10}
+		expect := math.Pi * 100
+		area := circ.Area()
 
 		if expect != area {
 			t.Fatal("Error")
