@@ -17,7 +17,7 @@ func Connection() {
 	defer func(db *sql.DB) {
 		err := db.Close()
 		if err != nil {
-
+			log.Fatal(err)
 		}
 	}(db)
 	if err = db.Ping(); err != nil {
