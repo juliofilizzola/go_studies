@@ -23,5 +23,12 @@ func Connection() {
 	if err = db.Ping(); err != nil {
 		log.Fatal(err)
 	}
+
 	fmt.Println("Connection...")
+	user, err := db.Query("select * from user")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer user.Close()
+	fmt.Println(user)
 }
