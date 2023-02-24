@@ -58,3 +58,39 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 	fmt.Println(idInsert)
 
 }
+
+func GetUsers(w http.ResponseWriter, r *http.Request) {
+	db, err := db2.Connect()
+	if err != nil {
+		w.Write([]byte("error ao connect database"))
+		return
+	}
+
+	getUsers, err := db.Query("select * from user")
+	if err != nil {
+		w.Write([]byte("error ao connect database"))
+		return
+	}
+	defer getUsers.Close()
+
+	var users []user
+
+	for getUsers.Next() {
+		var user user
+		if err := getUsers.Scan(&user.ID, &user.Name, &user.Email); err != nil {
+			w.Write([]byte("error ao connect database"))
+			return
+		}
+
+		users = append(users, user)
+
+	}
+	fmt.Println(users)
+	//w.Write(users)
+	w.WriteHeader(http.StatusOK)
+	if err := json.NewEncoder(w).Encode(users); err != nil {
+		w.Write([]byte("error ao connect database"))
+		return
+	}
+}
+func GetUser(w http.ResponseWriter, r *http.Request) {}
