@@ -14,6 +14,7 @@ func main() {
 	route.HandleFunc("/user", services.CreateUser).Methods(http.MethodPost)
 	route.HandleFunc("/user", services.GetUsers).Methods(http.MethodGet)
 	route.HandleFunc("/user/{id}", services.GetUser).Methods(http.MethodGet)
+	route.HandleFunc("/user/{id}", services.UpdateUser).Methods(http.MethodPut)
 	fmt.Println("Server running...")
 	log.Fatal(http.ListenAndServe(":5000", route))
 }
