@@ -135,3 +135,74 @@ func GetUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 }
+
+func UpdateUser(w http.ResponseWriter, r *http.Request) {
+	params := mux.Vars(r)
+
+	ID, err := strconv.ParseUint(params["id"], 10, 32)
+	if err != nil {
+		w.Write([]byte("parse uint err"))
+		return
+	}
+
+	request, err := io.ReadAll(r.Body)
+	if err != nil {
+		w.Write([]byte("Falha ao ler o corpor"))
+	}
+
+	var requestUser user
+
+	if err = json.Unmarshal(request, &requestUser); err != nil {
+		w.Write([]byte("Falha ao ler o corpor"))
+	}
+
+	fmt.Println(requestUser, "requestUser")
+	db, err := db2.Connect()
+	if err != nil {
+		w.Write([]byte("error ao connect database"))
+		return
+	}
+	defer db.Close()
+
+	upUser, err := db.Prepare("update user set name= ?, email =? where id = ?")
+
+	if err != nil {
+		w.Write([]byte("erro ao criar o statement!"))
+		return
+	}
+	defer upUser.Close()
+
+	if _, err := upUser.Exec(requestUser.Name, requestUser.Email, ID); err != nil {
+		w.Write([]byte("erro ao exec o statement!"))
+		return
+	}
+
+	getUser, err := db.Query("select * from user where id = ? ", ID)
+	if err != nil {
+		w.Write([]byte("erro request db!"))
+		return
+	}
+	defer getUser.Close()
+	fmt.Println(getUser, "get US")
+	var Upuser user
+
+	if getUser.Next() {
+		if err := getUser.Scan(&Upuser.ID, &Upuser.Name, &Upuser.Email); err != nil {
+			w.Write([]byte("erro request db!"))
+			return
+		}
+	} else {
+		w.WriteHeader(http.StatusNotFound)
+		w.Write([]byte("user not found"))
+		return
+	}
+
+	fmt.Println(Upuser, "up user")
+	//w.Write(users)
+	w.WriteHeader(http.StatusOK)
+	if err := json.NewEncoder(w).Encode(Upuser); err != nil {
+		w.Write([]byte("error convert response"))
+		return
+	}
+
+}
