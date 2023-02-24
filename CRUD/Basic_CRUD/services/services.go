@@ -4,8 +4,10 @@ import (
 	db2 "Basic_CRUD/db"
 	"encoding/json"
 	"fmt"
+	"github.com/gorilla/mux"
 	"io"
 	"net/http"
+	"strconv"
 )
 
 type user struct {
@@ -93,4 +95,43 @@ func GetUsers(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 }
-func GetUser(w http.ResponseWriter, r *http.Request) {}
+func GetUser(w http.ResponseWriter, r *http.Request) {
+	params := mux.Vars(r)
+
+	ID, err := strconv.ParseUint(params["id"], 10, 32)
+	if err != nil {
+		w.Write([]byte("parse uint err"))
+		return
+	}
+	fmt.Println(ID)
+	db, err := db2.Connect()
+	if err != nil {
+		w.Write([]byte("error ao connect database"))
+		return
+	}
+
+	getUser, err := db.Query("select * from user where id = ? ", ID)
+
+	if err != nil {
+		w.Write([]byte("erro request db!"))
+		return
+	}
+	var user user
+	if getUser.Next() {
+		if err := getUser.Scan(&user.ID, &user.Name, &user.Email); err != nil {
+			w.Write([]byte("erro request db!"))
+			return
+		}
+	} else {
+		w.WriteHeader(http.StatusNotFound)
+		w.Write([]byte("user not found"))
+		return
+	}
+	fmt.Println(user)
+	//w.Write(users)
+	w.WriteHeader(http.StatusOK)
+	if err := json.NewEncoder(w).Encode(user); err != nil {
+		w.Write([]byte("error convert response"))
+		return
+	}
+}
