@@ -5,7 +5,7 @@ import (
 )
 
 func Anonymous() {
-	fmt.Println("test")
+	fmt.Println("Test")
 
 	func(text string) {
 		fmt.Println(text)
