@@ -36,6 +36,7 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("error ao connect database"))
 		return
 	}
+	defer db.Close()
 
 	statment, err := db.Prepare("insert into user (name, email)values (?, ?)")
 
@@ -43,6 +44,7 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("erro ao criar o statement!"))
 		return
 	}
+	defer statment.Close()
 
 	insert, err := statment.Exec(user.Name, user.Email)
 	if err != nil {
@@ -67,6 +69,8 @@ func GetUsers(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("error ao connect database"))
 		return
 	}
+
+	defer db.Close()
 
 	getUsers, err := db.Query("select * from user")
 	if err != nil {
@@ -95,6 +99,7 @@ func GetUsers(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 }
+
 func GetUser(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 
@@ -110,12 +115,17 @@ func GetUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	defer db.Close()
+
 	getUser, err := db.Query("select * from user where id = ? ", ID)
 
 	if err != nil {
 		w.Write([]byte("erro request db!"))
 		return
 	}
+
+	defer getUser.Close()
+
 	var user user
 	if getUser.Next() {
 		if err := getUser.Scan(&user.ID, &user.Name, &user.Email); err != nil {
@@ -205,4 +215,39 @@ func UpdateUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+}
+
+func DeleteUser(w http.ResponseWriter, r *http.Request) {
+	params := mux.Vars(r)
+
+	ID, err := strconv.ParseUint(params["id"], 10, 32)
+	if err != nil {
+		w.Write([]byte("parse uint err"))
+		return
+	}
+
+	db, err := db2.Connect()
+
+	if err != nil {
+		w.Write([]byte("erro request db!"))
+		return
+	}
+
+	defer db.Close()
+
+	stantement, err := db.Prepare("delete from user where id = ?")
+	if err != nil {
+		w.Write([]byte("erro ao criar o statement!"))
+		return
+	}
+	defer stantement.Close()
+
+	if _, err := stantement.Exec(ID); err != nil {
+		w.Write([]byte("erro ao excluir!"))
+		return
+	}
+
+	w.WriteHeader(http.StatusNoContent)
+
+	w.Write([]byte("user deleted..."))
 }
