@@ -8,4 +8,16 @@ Aqui está os projetos de estudos de Golang
 
 # Lista de estudos
 
-[Fundamentos](https://github.com/juliofilizzola/go_studies)
+* [Fundamentos](https://github.com/juliofilizzola/go_studies/Fundamentos)
+
+* [Concorrência](https://github.com/juliofilizzola/go_studies/Concorrência)
+
+* [Test](https://github.com/juliofilizzola/go_studies/Test)
+
+* [DB](https://github.com/juliofilizzola/go_studies/DB)
+
+* [CRUD](https://github.com/juliofilizzola/go_studies/CRUD)
+
+* [HTTP](https://github.com/juliofilizzola/go_studies/HTTP)
+
+* [JSON](https://github.com/juliofilizzola/go_studies/JSON)
