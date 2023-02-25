@@ -10,16 +10,16 @@ Cada diretorio aqui tem alguns projetos dentro, que vão desde o início do topi
 
 # Lista de estudos
 
-* [Fundamentos](https://github.com/juliofilizzola/go_studies/Fundamentos)
+* [Fundamentos](https://github.com/juliofilizzola/go_studies/tree/main/Fundamentos)
 
-* [Concorrência](https://github.com/juliofilizzola/go_studies/Concorrência)
+* [Concorrência](https://github.com/juliofilizzola/go_studies/tree/main/Concorrência)
 
-* [Test](https://github.com/juliofilizzola/go_studies/Test)
+* [Test](https://github.com/juliofilizzola/go_studies/tree/main/Test)
 
-* [DB](https://github.com/juliofilizzola/go_studies/DB)
+* [DB](https://github.com/juliofilizzola/go_studies/tree/main/DB)
 
-* [CRUD](https://github.com/juliofilizzola/go_studies/CRUD)
+* [CRUD](https://github.com/juliofilizzola/go_studies/tree/main/CRUD)
 
-* [HTTP](https://github.com/juliofilizzola/go_studies/HTTP)
+* [HTTP](https://github.com/juliofilizzola/go_studies/tree/main/HTTP)
 
-* [JSON](https://github.com/juliofilizzola/go_studies/JSON)
+* [JSON](https://github.com/juliofilizzola/go_studies/tree/main/JSON)
